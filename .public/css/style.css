@@ -1,0 +1,64 @@
+/*Variables*/
+/*Mixin*/
+/*Mobile first*/
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+/*Header*/
+.header__heading {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*Section Location*/
+.location {
+  text-align: center;
+}
+.location form {
+  background-color: #ebebeb;
+  padding: 15px 0;
+  box-shadow: inset 0 8px 6px -6px silver;
+  text-align: end;
+}
+.location form label {
+  padding-right: 10px;
+  color: #404040;
+}
+.location form > input {
+  border-style: none;
+  background: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #404040;
+}
+.location__booking {
+  width: 100%;
+  margin: auto;
+}
+.location__booking__heading {
+  padding: 0 15px;
+}
+.location__booking button {
+  border-radius: 35px;
+  border-style: none;
+  font-size: 1.1em;
+  color: white;
+  padding: 20px;
+  background: linear-gradient(#ff79da, #9356dc);
+}
+
+/*# sourceMappingURL=style.css.map */
