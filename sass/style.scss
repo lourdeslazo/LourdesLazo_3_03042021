@@ -4,8 +4,11 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $color-fourth: #404040;
 
+$font-primary: 2.2em;
 $font-secondary: 1.8em;
+$font-tertiary: 2em;
 $font-fourth: 1.1em;
+$font-fifth: 1.2em;
 
 $padding-ten: 10px;
 
@@ -13,6 +16,7 @@ $padding-ten: 10px;
 @mixin font-p {
   font-size: 1.2em;
   font-weight: 100;
+  margin: 0;
 }
 
 @mixin button-gradient {
@@ -36,6 +40,11 @@ h4 {
   font-size: $font-fourth;
 }
 
+h5 {
+  font-size: $font-fifth;
+  margin: 0;
+}
+
 p {
   @include font-p;
 }
@@ -52,6 +61,8 @@ p {
 
 .location {
   text-align: center;
+  padding-bottom: $padding-ten + 40px;
+  background-color: lighten($color-fourth, 70);
 
   form {
     background-color: lighten($color-fourth, 67);
@@ -87,6 +98,7 @@ p {
       font-weight: bold;
       color: lighten($color-fourth, 100);
       padding: $padding-ten + 10px;
+      margin-top: 30px;
       @include button-gradient;
     }
   }
@@ -149,5 +161,91 @@ p {
       font-weight: normal;
       line-height: 25px;
     }
+  }
+}
+
+/* Section Restaurants*/
+
+.restaurants {
+  background-color: lighten($color-fourth, 70);
+  padding-bottom: $padding-ten + 30px;
+
+  &__heading {
+    padding-left: $padding-ten + 10px;
+    padding-top: $padding-ten + 30px;
+  }
+
+  &__prev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: currentColor;
+    }
+
+    &__image {
+      display: flex;
+      flex-direction: column;
+      background-color: lighten($color-fourth, 100);
+      width: 330px;
+      height: 290px;
+      border-radius: 20px;
+      box-shadow: 0 10px 10px lighten($color-fourth, 60);
+      position: relative;
+      margin-bottom: 20px;
+
+      > figure {
+        height: 200px;
+        width: 100%;
+        margin: 0;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px 10px 0 0;
+        }
+      }
+
+      &__byline {
+        display: flex;
+        justify-content: space-between;
+        padding: $padding-ten + 10px;
+
+        h5 {
+          padding-bottom: 5px;
+        }
+
+        .fa-heart {
+          font-size: $font-secondary;
+          font-weight: 100;
+        }
+
+        span {
+          position: absolute;
+          left: 225px;
+          top: 15px;
+          background-color: $color-tertiary;
+          width: 90px;
+          height: 35px;
+          text-align: center;
+          line-height: 33px;
+          border-radius: 2px;
+          color: darken($color-tertiary, 40);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $color-fourth;
+  color: lighten($color-fourth, 100);
+
+  ul {
+    list-style: none;
   }
 }
