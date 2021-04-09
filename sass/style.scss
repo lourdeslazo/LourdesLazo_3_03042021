@@ -4,7 +4,7 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $color-fourth: #404040;
 
-$font-primary: 2.2em;
+$font-primary: 2.1em;
 $font-secondary: 1.8em;
 $font-tertiary: 2em;
 $font-fourth: 1.1em;
@@ -293,3 +293,18 @@ footer {
     }
   }
 }
+
+/*A la francais*/
+
+h1 {
+  font-size: $font-primary;
+  font-family: "Shrikhand", sans-serif;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*main*/
