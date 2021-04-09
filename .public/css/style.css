@@ -1,5 +1,6 @@
 /*Variables*/
-/*Mixin*/
+/*Maps*/
+/*Mixins*/
 /*Mobile first*/
 body {
   font-family: "Roboto", sans-serif;
@@ -28,10 +29,11 @@ p {
 }
 
 /*Header*/
-.header__heading {
+header {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+}
+header img {
+  margin: 20px 0;
 }
 
 /*Section Location*/
@@ -42,9 +44,8 @@ p {
 }
 .location form {
   background-color: #ebebeb;
-  padding: 15px 0;
+  padding: 15px 0 15px 70px;
   box-shadow: inset 0 8px 6px -6px silver;
-  padding-left: 70px;
 }
 .location form label {
   padding-right: 10px;
@@ -61,7 +62,7 @@ p {
   width: 100%;
   margin: auto;
 }
-.location__booking__heading {
+.location__booking h2 {
   padding: 0 15px;
 }
 .location__booking button {
@@ -73,10 +74,17 @@ p {
   padding: 20px;
   margin-top: 30px;
   background: linear-gradient(175deg, #ff79da, #9356dc);
+  box-shadow: 0 3px 10px silver;
+  opacity: 1;
+}
+.location__booking button:hover {
+  opacity: 0.9;
+  box-shadow: 0 3px 10px gray;
+  transition: all 250ms;
 }
 
 /*Section How to*/
-.how-to .how-to__heading {
+.how-to h2 {
   padding-left: 20px;
 }
 .how-to ul {
@@ -90,7 +98,6 @@ p {
   border-radius: 25px;
   width: 300px;
   height: 80px;
-  box-shadow: 0 3px 10px #d9d9d9;
   margin-bottom: 25px;
   text-align: center;
   font-size: 1.1em;
@@ -100,15 +107,10 @@ p {
   flex-direction: row;
   align-items: center;
   padding-left: 35px;
+  box-shadow: 0 3px 10px silver;
 }
-.how-to .how-to__button .fa-mobile-alt {
-  color: #737373;
-  padding-right: 20px;
-}
-.how-to .how-to__button .fa-list-ul {
-  color: #737373;
-  padding-right: 20px;
-}
+.how-to .how-to__button .fa-mobile-alt,
+.how-to .how-to__button .fa-list-ul,
 .how-to .how-to__button .fa-store {
   color: #737373;
   padding-right: 20px;
@@ -131,9 +133,8 @@ p {
   background-color: #f3f3f3;
   padding-bottom: 40px;
 }
-.restaurants__heading {
-  padding-left: 20px;
-  padding-top: 40px;
+.restaurants h2 {
+  padding: 40px 0 0 20px;
 }
 .restaurants__prev {
   display: flex;
@@ -151,9 +152,9 @@ p {
   width: 330px;
   height: 290px;
   border-radius: 20px;
-  box-shadow: 0 10px 10px #d9d9d9;
   position: relative;
   margin-bottom: 20px;
+  box-shadow: 0 3px 10px silver;
 }
 .restaurants__prev__image > figure {
   height: 200px;
@@ -164,7 +165,7 @@ p {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 10px 10px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 .restaurants__prev__image__byline {
   display: flex;
@@ -195,9 +196,7 @@ p {
 footer {
   background-color: #404040;
   color: white;
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 0 30px 30px;
 }
 footer img {
   filter: invert(100%);
@@ -209,6 +208,10 @@ footer ul {
 }
 footer ul li {
   line-height: 25px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: currentColor;
 }
 footer ul .fa-utensils {
   margin-right: 12px;

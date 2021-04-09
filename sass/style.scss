@@ -10,17 +10,36 @@ $font-tertiary: 2em;
 $font-fourth: 1.1em;
 $font-fifth: 1.2em;
 
-$padding-ten: 10px;
+$padding-small: 10px;
+$padding-medium: 30px;
 
-/*Mixin*/
+/*Maps*/
+$line-height: (
+  small: 25px,
+  medium: 33px,
+);
+
+$bd-radius: (
+  small: 20px,
+  medium: 25px,
+  large: 35px,
+  xlarge: 50px,
+);
+
+/*Mixins*/
 @mixin font-p {
   font-size: 1.2em;
   font-weight: 100;
   margin: 0;
 }
 
-@mixin button-gradient {
-  background: linear-gradient(175deg, #ff79da, #9356dc);
+@mixin box-shw($color: $color-fourth) {
+  box-shadow: 0 3px 10px lighten($color, 50);
+}
+
+@mixin icon {
+  color: lighten($color-fourth, 20);
+  padding-right: $padding-small + 10px;
 }
 
 /*Mobile first*/
@@ -51,27 +70,28 @@ p {
 
 /*Header*/
 
-.header__heading {
+header {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+  img {
+    margin: 20px 0;
+  }
 }
 
 /*Section Location*/
 
 .location {
   text-align: center;
-  padding-bottom: $padding-ten + 40px;
+  padding-bottom: $padding-medium + 20px;
   background-color: lighten($color-fourth, 70);
 
   form {
     background-color: lighten($color-fourth, 67);
-    padding: $padding-ten + 5px 0;
+    padding: $padding-small + 5px 0 $padding-small + 5px $padding-medium + 40px;
     box-shadow: inset 0 8px 6px -6px lighten($color-fourth, 50);
-    padding-left: 70px;
 
     label {
-      padding-right: $padding-ten;
+      padding-right: $padding-small;
       color: $color-fourth;
     }
 
@@ -88,19 +108,27 @@ p {
     width: 100%;
     margin: auto;
 
-    &__heading {
-      padding: 0 $padding-ten + 5px;
+    h2 {
+      padding: 0 $padding-small + 5px;
     }
 
     button {
-      border-radius: 35px;
+      border-radius: map-get($bd-radius, large);
       border-style: none;
       font-size: $font-fourth;
       font-weight: bold;
       color: lighten($color-fourth, 100);
-      padding: $padding-ten + 10px;
+      padding: $padding-small + 10px;
       margin-top: 30px;
-      @include button-gradient;
+      background: linear-gradient(175deg, #ff79da, #9356dc);
+      @include box-shw;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.9;
+        @include box-shw(darken($color-fourth, 50));
+        transition: all 250ms;
+      }
     }
   }
 }
@@ -108,8 +136,8 @@ p {
 /*Section How to*/
 
 .how-to {
-  .how-to__heading {
-    padding-left: $padding-ten + 10px;
+  h2 {
+    padding-left: $padding-small + 10px;
   }
 
   ul {
@@ -121,10 +149,9 @@ p {
   }
 
   .how-to__button {
-    border-radius: 25px;
+    border-radius: map-get($bd-radius, medium);
     width: 300px;
     height: 80px;
-    box-shadow: 0 3px 10px lighten($color-fourth, 60);
     margin-bottom: 25px;
     text-align: center;
     font-size: $font-fourth;
@@ -133,26 +160,18 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: $padding-ten + 25px;
+    padding-left: $padding-medium + 5px;
+    @include box-shw;
 
-    .fa-mobile-alt {
-      color: lighten($color-fourth, 20);
-      padding-right: $padding-ten + 10px;
-    }
-
-    .fa-list-ul {
-      color: lighten($color-fourth, 20);
-      padding-right: $padding-ten + 10px;
-    }
-
+    .fa-mobile-alt,
+    .fa-list-ul,
     .fa-store {
-      color: lighten($color-fourth, 20);
-      padding-right: $padding-ten + 10px;
+      @include icon;
     }
 
     &__choice {
       position: absolute;
-      border-radius: 50px;
+      border-radius: map-get($bd-radius, xlarge);
       height: 25px;
       width: 25px;
       background-color: $color-primary;
@@ -160,7 +179,7 @@ p {
       left: -12px;
       color: lighten($color-fourth, 100);
       font-weight: normal;
-      line-height: 25px;
+      line-height: map-get($line-height, small);
     }
   }
 }
@@ -169,11 +188,10 @@ p {
 
 .restaurants {
   background-color: lighten($color-fourth, 70);
-  padding-bottom: $padding-ten + 30px;
+  padding-bottom: $padding-small + $padding-medium;
 
-  &__heading {
-    padding-left: $padding-ten + 10px;
-    padding-top: $padding-ten + 30px;
+  h2 {
+    padding: $padding-small + $padding-medium 0 0 $padding-small + 10px;
   }
 
   &__prev {
@@ -192,10 +210,10 @@ p {
       background-color: lighten($color-fourth, 100);
       width: 330px;
       height: 290px;
-      border-radius: 20px;
-      box-shadow: 0 10px 10px lighten($color-fourth, 60);
+      border-radius: map-get($bd-radius, small);
       position: relative;
       margin-bottom: 20px;
+      @include box-shw;
 
       > figure {
         height: 200px;
@@ -206,14 +224,14 @@ p {
           object-fit: cover;
           width: 100%;
           height: 100%;
-          border-radius: 10px 10px 0 0;
+          border-radius: 20px 20px 0 0;
         }
       }
 
       &__byline {
         display: flex;
         justify-content: space-between;
-        padding: $padding-ten + 10px;
+        padding: $padding-small + 10px;
 
         h5 {
           padding-bottom: 5px;
@@ -232,7 +250,7 @@ p {
           width: 90px;
           height: 35px;
           text-align: center;
-          line-height: 33px;
+          line-height: map-get($line-height, medium);
           border-radius: 2px;
           color: darken($color-tertiary, 40);
           font-weight: bold;
@@ -245,9 +263,7 @@ p {
 footer {
   background-color: $color-fourth;
   color: lighten($color-fourth, 100);
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: $padding-medium 0 $padding-medium $padding-medium;
 
   img {
     filter: invert(100%);
@@ -259,7 +275,12 @@ footer {
     padding: 0;
 
     li {
-      line-height: 25px;
+      line-height: map-get($line-height, small);
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
     }
 
     .fa-utensils {
