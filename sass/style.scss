@@ -294,7 +294,7 @@ footer {
   }
 }
 
-/*A la francais*/
+/*A la francaise*/
 
 h1 {
   font-size: $font-primary;
@@ -305,6 +305,25 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .fa-arrow-left {
+    position: absolute;
+    left: 25px;
+  }
+}
+
+.menu {
+  img {
+    height: 300px;
+  }
+
+  article {
+    border-radius: map-get($bd-radius, large);
+    position: absolute;
+    top: 315px;
+    background-color: lighten($color-fourth, 70);
+    width: 100%;
+  }
 }
 
 /*main*/

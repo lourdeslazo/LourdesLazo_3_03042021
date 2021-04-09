@@ -221,7 +221,7 @@ footer ul .fa-hands-helping {
   font-size: 0.7em;
 }
 
-/*A la francais*/
+/*A la francaise*/
 h1 {
   font-size: 2.1em;
   font-family: "Shrikhand", sans-serif;
@@ -231,6 +231,21 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.heading .fa-arrow-left {
+  position: absolute;
+  left: 25px;
+}
+
+.menu img {
+  height: 300px;
+}
+.menu article {
+  border-radius: 35px;
+  position: absolute;
+  top: 315px;
+  background-color: #f3f3f3;
+  width: 100%;
 }
 
 /*main*/
