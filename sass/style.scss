@@ -27,7 +27,7 @@ $bd-radius: (
 
 /*Mixins*/
 @mixin font-p {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 100;
   margin: 0;
 }
@@ -122,6 +122,10 @@ header {
 
     h2 {
       padding: 0 $padding-small + 5px;
+    }
+
+    h5 {
+      font-weight: 100;
     }
 
     button {
@@ -303,6 +307,7 @@ footer {
 h1 {
   font-size: $font-primary;
   font-family: "Shrikhand", sans-serif;
+  margin-bottom: 0;
 }
 
 .head__heading {
@@ -327,7 +332,7 @@ h1 {
   }
 
   article {
-    border-radius: map-get($bd-radius, large);
+    border-radius: 35px 35px 0 0;
     background-color: lighten($color-fourth, 70);
     width: 100%;
     position: absolute;
@@ -336,7 +341,7 @@ h1 {
     .heading {
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: baseline;
 
       .fa-heart {
         font-size: $font-secondary;
@@ -347,14 +352,18 @@ h1 {
     h3 {
       font-size: $font-tertiary;
       font-weight: 400;
-      margin: 0 0 30px 20px;
+      margin: 50px 0 15px 20px;
+      border-bottom: 3px solid $color-tertiary;
+      width: 46px;
+      padding-bottom: 7px;
     }
 
     .menu {
       border-radius: map-get($bd-radius, small);
       width: 315px;
       height: 67px;
-      margin-left: 13px;
+      margin-left: 14px;
+      margin-bottom: 15px;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -374,6 +383,8 @@ h1 {
     button {
       @include btn;
       @include box-shw;
+      margin-left: 86px;
+      width: 200px;
 
       &:hover {
         opacity: 0.9;

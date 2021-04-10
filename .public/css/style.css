@@ -24,7 +24,7 @@ h5 {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 100;
   margin: 0;
 }
@@ -65,6 +65,9 @@ header img {
 }
 .location__booking h2 {
   padding: 0 15px;
+}
+.location__booking h5 {
+  font-weight: 100;
 }
 .location__booking button {
   border-radius: 35px;
@@ -226,6 +229,7 @@ footer ul .fa-hands-helping {
 h1 {
   font-size: 2.1em;
   font-family: "Shrikhand", sans-serif;
+  margin-bottom: 0;
 }
 
 .head__heading {
@@ -248,7 +252,7 @@ h1 {
   width: 100%;
 }
 .section-menu article {
-  border-radius: 35px;
+  border-radius: 35px 35px 0 0;
   background-color: #f3f3f3;
   width: 100%;
   position: absolute;
@@ -257,7 +261,7 @@ h1 {
 .section-menu article .heading {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
 }
 .section-menu article .heading .fa-heart {
   font-size: 1.8em;
@@ -266,13 +270,17 @@ h1 {
 .section-menu article h3 {
   font-size: 1.2em;
   font-weight: 400;
-  margin: 0 0 30px 20px;
+  margin: 50px 0 15px 20px;
+  border-bottom: 3px solid #99e2d0;
+  width: 46px;
+  padding-bottom: 7px;
 }
 .section-menu article .menu {
   border-radius: 20px;
   width: 315px;
   height: 67px;
-  margin-left: 13px;
+  margin-left: 14px;
+  margin-bottom: 15px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -297,6 +305,8 @@ h1 {
   background: linear-gradient(175deg, #ff79da, #9356dc);
   opacity: 1;
   box-shadow: 0 3px 10px silver;
+  margin-left: 86px;
+  width: 200px;
 }
 .section-menu article button:hover {
   opacity: 0.9;
