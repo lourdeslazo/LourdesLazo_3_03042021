@@ -15,6 +15,7 @@ h2 {
 
 h4 {
   font-size: 1.1em;
+  margin: 0;
 }
 
 h5 {
@@ -74,8 +75,8 @@ header img {
   padding: 20px;
   margin-top: 30px;
   background: linear-gradient(175deg, #ff79da, #9356dc);
-  box-shadow: 0 3px 10px silver;
   opacity: 1;
+  box-shadow: 0 3px 10px silver;
 }
 .location__booking button:hover {
   opacity: 0.9;
@@ -227,27 +228,80 @@ h1 {
   font-family: "Shrikhand", sans-serif;
 }
 
-.heading {
+.head__heading {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.heading .fa-arrow-left {
+.head__heading .fa-arrow-left {
   position: absolute;
   left: 25px;
-}
-
-.menu img {
-  height: 300px;
-}
-.menu article {
-  border-radius: 35px;
-  position: absolute;
-  top: 315px;
-  background-color: #f3f3f3;
-  width: 100%;
+  color: #404040;
 }
 
 /*main*/
+.section-menu {
+  position: relative;
+}
+.section-menu img {
+  height: 300px;
+  width: 100%;
+}
+.section-menu article {
+  border-radius: 35px;
+  background-color: #f3f3f3;
+  width: 100%;
+  position: absolute;
+  top: 240px;
+}
+.section-menu article .heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.section-menu article .heading .fa-heart {
+  font-size: 1.8em;
+  font-weight: 100;
+}
+.section-menu article h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 0 0 30px 20px;
+}
+.section-menu article .menu {
+  border-radius: 20px;
+  width: 315px;
+  height: 67px;
+  margin-left: 13px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 20px 15px 13px;
+  box-shadow: 0 3px 10px silver;
+}
+.section-menu article .menu h5 {
+  padding-bottom: 5px;
+}
+.section-menu article .menu__price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.section-menu article button {
+  border-radius: 35px;
+  border-style: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  margin-top: 30px;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  opacity: 1;
+  box-shadow: 0 3px 10px silver;
+}
+.section-menu article button:hover {
+  opacity: 0.9;
+  box-shadow: 0 3px 10px gray;
+  transition: all 250ms;
+}
 
 /*# sourceMappingURL=style.css.map */

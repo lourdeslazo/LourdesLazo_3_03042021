@@ -6,9 +6,8 @@ $color-fourth: #404040;
 
 $font-primary: 2.1em;
 $font-secondary: 1.8em;
-$font-tertiary: 2em;
+$font-tertiary: 1.2em;
 $font-fourth: 1.1em;
-$font-fifth: 1.2em;
 
 $padding-small: 10px;
 $padding-medium: 30px;
@@ -33,13 +32,25 @@ $bd-radius: (
   margin: 0;
 }
 
-@mixin box-shw($color: $color-fourth) {
-  box-shadow: 0 3px 10px lighten($color, 50);
-}
-
 @mixin icon {
   color: lighten($color-fourth, 20);
   padding-right: $padding-small + 10px;
+}
+
+@mixin btn {
+  border-radius: map-get($bd-radius, large);
+  border-style: none;
+  font-size: $font-fourth;
+  font-weight: bold;
+  color: lighten($color-fourth, 100);
+  padding: $padding-small + 10px;
+  margin-top: 30px;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  opacity: 1;
+}
+
+@mixin box-shw($color: $color-fourth) {
+  box-shadow: 0 3px 10px lighten($color, 50);
 }
 
 /*Mobile first*/
@@ -57,10 +68,11 @@ h2 {
 
 h4 {
   font-size: $font-fourth;
+  margin: 0;
 }
 
 h5 {
-  font-size: $font-fifth;
+  font-size: $font-tertiary;
   margin: 0;
 }
 
@@ -113,16 +125,8 @@ header {
     }
 
     button {
-      border-radius: map-get($bd-radius, large);
-      border-style: none;
-      font-size: $font-fourth;
-      font-weight: bold;
-      color: lighten($color-fourth, 100);
-      padding: $padding-small + 10px;
-      margin-top: 30px;
-      background: linear-gradient(175deg, #ff79da, #9356dc);
+      @include btn;
       @include box-shw;
-      opacity: 1;
 
       &:hover {
         opacity: 0.9;
@@ -301,7 +305,7 @@ h1 {
   font-family: "Shrikhand", sans-serif;
 }
 
-.heading {
+.head__heading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,21 +313,73 @@ h1 {
   .fa-arrow-left {
     position: absolute;
     left: 25px;
-  }
-}
-
-.menu {
-  img {
-    height: 300px;
-  }
-
-  article {
-    border-radius: map-get($bd-radius, large);
-    position: absolute;
-    top: 315px;
-    background-color: lighten($color-fourth, 70);
-    width: 100%;
+    color: $color-fourth;
   }
 }
 
 /*main*/
+.section-menu {
+  position: relative;
+
+  img {
+    height: 300px;
+    width: 100%;
+  }
+
+  article {
+    border-radius: map-get($bd-radius, large);
+    background-color: lighten($color-fourth, 70);
+    width: 100%;
+    position: absolute;
+    top: 240px;
+
+    .heading {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .fa-heart {
+        font-size: $font-secondary;
+        font-weight: 100;
+      }
+    }
+
+    h3 {
+      font-size: $font-tertiary;
+      font-weight: 400;
+      margin: 0 0 30px 20px;
+    }
+
+    .menu {
+      border-radius: map-get($bd-radius, small);
+      width: 315px;
+      height: 67px;
+      margin-left: 13px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 $padding-small + 10px $padding-small + 5px $padding-small + 3px;
+      @include box-shw;
+
+      h5 {
+        padding-bottom: 5px;
+      }
+
+      &__price {
+        font-size: $font-tertiary;
+        font-weight: bold;
+      }
+    }
+
+    button {
+      @include btn;
+      @include box-shw;
+
+      &:hover {
+        opacity: 0.9;
+        @include box-shw(darken($color-fourth, 50));
+        transition: all 250ms;
+      }
+    }
+  }
+}
