@@ -53,6 +53,42 @@ $bd-radius: (
   box-shadow: 0 3px 10px lighten($color, 50);
 }
 
+@keyframes bars {
+  0% {
+    transform: scaleY(0.3);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / 5;
+
+@keyframes load-trans {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes menu {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+$menu-delay: $anim-dur / 3;
+
 /*Mobile first*/
 
 body {
@@ -78,6 +114,40 @@ h5 {
 
 p {
   @include font-p;
+}
+
+/*Load*/
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  animation: load-trans $anim-delay both 3000ms ease-in-out;
+
+  &__load {
+    display: flex;
+    justify-content: space-evenly;
+    height: 150px;
+    width: 200px;
+
+    &__bar {
+      background-color: $color-tertiary;
+      height: 100%;
+      width: 20px;
+      animation: bars $anim-dur backwards infinite ease-in-out alternate;
+      @for $i from 1 through 5 {
+        &--#{$i} {
+          animation-delay: $anim-delay * $i;
+        }
+      }
+    }
+  }
 }
 
 /*Header*/
@@ -359,24 +429,37 @@ h1 {
     }
 
     .menu {
-      border-radius: map-get($bd-radius, small);
-      width: 315px;
-      height: 67px;
-      margin-left: 14px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 0 $padding-small + 10px $padding-small + 5px $padding-small + 3px;
-      @include box-shw;
+      &__text {
+        animation: menu $anim-dur;
+        @for $i from 1 through 3 {
+          &--#{$i} {
+            animation-delay: $menu-delay * $i;
+          }
+        }
+        border-radius: map-get($bd-radius, small);
+        width: 315px;
+        height: 67px;
+        margin-left: 14px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 $padding-small + 10px $padding-small + 5px $padding-small +
+          3px;
+        @include box-shw;
 
-      h5 {
-        padding-bottom: 5px;
-      }
+        h5 {
+          padding-bottom: 5px;
+        }
 
-      &__price {
-        font-size: $font-tertiary;
-        font-weight: bold;
+        &__price {
+          font-size: $font-tertiary;
+          font-weight: bold;
+        }
+
+        span {
+          display: none;
+        }
       }
     }
 

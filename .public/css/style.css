@@ -1,6 +1,31 @@
 /*Variables*/
 /*Maps*/
 /*Mixins*/
+@keyframes bars {
+  0% {
+    transform: scaleY(0.3);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes load-trans {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes menu {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 /*Mobile first*/
 body {
   font-family: "Roboto", sans-serif;
@@ -27,6 +52,47 @@ p {
   font-size: 1em;
   font-weight: 100;
   margin: 0;
+}
+
+/*Load*/
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  animation: load-trans 200ms both 3000ms ease-in-out;
+}
+.loading__load {
+  display: flex;
+  justify-content: space-evenly;
+  height: 150px;
+  width: 200px;
+}
+.loading__load__bar {
+  background-color: #99e2d0;
+  height: 100%;
+  width: 20px;
+  animation: bars 1000ms backwards infinite ease-in-out alternate;
+}
+.loading__load__bar--1 {
+  animation-delay: 200ms;
+}
+.loading__load__bar--2 {
+  animation-delay: 400ms;
+}
+.loading__load__bar--3 {
+  animation-delay: 600ms;
+}
+.loading__load__bar--4 {
+  animation-delay: 800ms;
+}
+.loading__load__bar--5 {
+  animation-delay: 1000ms;
 }
 
 /*Header*/
@@ -275,7 +341,8 @@ h1 {
   width: 46px;
   padding-bottom: 7px;
 }
-.section-menu article .menu {
+.section-menu article .menu__text {
+  animation: menu 1000ms;
   border-radius: 20px;
   width: 315px;
   height: 67px;
@@ -287,12 +354,24 @@ h1 {
   padding: 0 20px 15px 13px;
   box-shadow: 0 3px 10px silver;
 }
-.section-menu article .menu h5 {
+.section-menu article .menu__text--1 {
+  animation-delay: 333.3333333333ms;
+}
+.section-menu article .menu__text--2 {
+  animation-delay: 666.6666666667ms;
+}
+.section-menu article .menu__text--3 {
+  animation-delay: 1000ms;
+}
+.section-menu article .menu__text h5 {
   padding-bottom: 5px;
 }
-.section-menu article .menu__price {
+.section-menu article .menu__text__price {
   font-size: 1.2em;
   font-weight: bold;
+}
+.section-menu article .menu__text span {
+  display: none;
 }
 .section-menu article button {
   border-radius: 35px;
