@@ -19,11 +19,21 @@
   }
 }
 @keyframes menu {
-  0% {
-    transform: scaleY(0);
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 1000ms ease-in-out;
   }
-  100% {
-    transform: scaleY(1);
+  to {
+    opacity: 1;
+  }
+}
+@keyframes heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*Mobile first*/
@@ -164,7 +174,7 @@ header img {
   flex-direction: column;
   align-items: center;
 }
-.how-to .how-to__button {
+.how-to__button {
   border-radius: 25px;
   width: 300px;
   height: 80px;
@@ -179,13 +189,13 @@ header img {
   padding-left: 35px;
   box-shadow: 0 3px 10px silver;
 }
-.how-to .how-to__button .fa-mobile-alt,
-.how-to .how-to__button .fa-list-ul,
-.how-to .how-to__button .fa-store {
+.how-to__button .fa-mobile-alt,
+.how-to__button .fa-list-ul,
+.how-to__button .fa-store {
   color: #737373;
   padding-right: 20px;
 }
-.how-to .how-to__button__choice {
+.how-to__button__choice {
   position: absolute;
   border-radius: 50px;
   height: 25px;
@@ -196,6 +206,14 @@ header img {
   color: white;
   font-weight: normal;
   line-height: 25px;
+}
+.how-to__button:hover {
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+
+.color-button:hover .color-icon {
+  color: #9356dc;
 }
 
 /* Section Restaurants*/
@@ -245,11 +263,26 @@ header img {
 .restaurants__prev__image__byline h5 {
   padding-bottom: 5px;
 }
-.restaurants__prev__image__byline .fa-heart {
-  font-size: 1.8em;
-  font-weight: 100;
+.restaurants__prev__image__byline__side {
+  position: absolute;
 }
-.restaurants__prev__image__byline span {
+.restaurants__prev__image__byline__side .fa-heart {
+  position: absolute;
+  left: 250px;
+  top: 5px;
+  font-size: 1.8em;
+}
+.restaurants__prev__image__byline__side .fas {
+  opacity: 0;
+}
+.restaurants__prev__image__byline__side .fas:hover {
+  animation: heart 1000ms ease-in-out;
+  display: block;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurants__prev__image span {
   position: absolute;
   left: 225px;
   top: 15px;
@@ -306,23 +339,30 @@ h1 {
 .head__heading .fa-arrow-left {
   position: absolute;
   left: 25px;
+  top: 30px;
   color: #404040;
 }
 
 /*main*/
 .section-menu {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.section-menu img {
+.section-menu__image {
   height: 300px;
+  width: 100%;
+  z-index: -1;
+}
+.section-menu__image img {
+  height: 100%;
   width: 100%;
 }
 .section-menu article {
   border-radius: 35px 35px 0 0;
   background-color: #f3f3f3;
   width: 100%;
-  position: absolute;
-  top: 240px;
+  z-index: 1;
+  margin-top: -60px;
 }
 .section-menu article .heading {
   display: flex;
@@ -341,12 +381,16 @@ h1 {
   width: 46px;
   padding-bottom: 7px;
 }
+.section-menu article .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .section-menu article .menu__text {
-  animation: menu 1000ms;
+  animation: menu 1000ms backwards ease-in-out;
   border-radius: 20px;
   width: 315px;
   height: 67px;
-  margin-left: 14px;
   margin-bottom: 15px;
   display: flex;
   align-items: flex-end;
@@ -370,8 +414,33 @@ h1 {
   font-size: 1.2em;
   font-weight: bold;
 }
-.section-menu article .menu__text span {
-  display: none;
+.section-menu article .menu__text:hover + .menu__check {
+  transform: translateX(-50px);
+  opacity: 1;
+  z-index: 1;
+}
+.section-menu article .menu__text:hover + .menu__check > .fa-check-circle {
+  transform: rotate(0deg);
+}
+.section-menu article .menu__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.1em;
+  background-color: #99e2d0;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  top: 500px;
+  transition: transform 1000ms ease-in-out;
+}
+.section-menu article .menu__check .fa-check-circle {
+  filter: invert(100%);
+  transform: rotate(-360deg);
+  transition: transform 500ms ease-in-out;
 }
 .section-menu article button {
   border-radius: 35px;
@@ -386,6 +455,7 @@ h1 {
   box-shadow: 0 3px 10px silver;
   margin-left: 86px;
   width: 200px;
+  margin-bottom: 60px;
 }
 .section-menu article button:hover {
   opacity: 0.9;
