@@ -558,7 +558,7 @@ footer {
   }
 }
 
-/*A la francaise*/
+/*Page A la francaise*/
 
 h1 {
   font-size: $font-primary;
@@ -566,7 +566,7 @@ h1 {
   margin-bottom: 0;
 }
 
-.head__heading {
+header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -602,17 +602,6 @@ h1 {
     z-index: 1;
     margin-top: -60px;
 
-    .heading {
-      display: flex;
-      justify-content: space-around;
-      align-items: baseline;
-
-      .fa-heart {
-        font-size: $font-secondary;
-        font-weight: 100;
-      }
-    }
-
     h3 {
       font-size: $font-tertiary;
       font-weight: 400;
@@ -620,84 +609,6 @@ h1 {
       border-bottom: 3px solid $color-tertiary;
       width: 46px;
       padding-bottom: 7px;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 350px;
-      margin: auto;
-
-      &__text {
-        animation: menu $anim-dur backwards ease-in-out;
-        @for $i from 1 through 3 {
-          &--#{$i} {
-            animation-delay: $menu-delay * $i;
-          }
-        }
-        cursor: pointer;
-        border-radius: map-get($bd-radius, small);
-        width: 100%;
-        height: 83px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        padding: 0 $padding-small + 5px 0 $padding-small + 5px;
-        box-sizing: border-box;
-        transform-origin: left;
-        overflow: hidden;
-
-        @include box-shw;
-
-        h5 {
-          padding-bottom: 5px;
-        }
-
-        &__price {
-          font-size: $font-tertiary;
-          font-weight: bold;
-        }
-
-        &:hover {
-          padding-right: 0;
-        }
-
-        &:hover > .menu__text__check {
-          width: 20%;
-
-          & > .fa-check-circle {
-            transform: rotate(0deg);
-          }
-        }
-
-        &__check {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: $font-primary;
-          background-color: $color-tertiary;
-          border-radius: 0 20px 20px 0;
-          height: 83px;
-          overflow: hidden;
-
-          width: 0;
-          right: 0;
-
-          transform-origin: right center;
-          transition: width 600ms linear;
-          box-shadow: 4px 3px 10px lighten($color-fourth, 50);
-
-          .fa-check-circle {
-            filter: invert(100%);
-
-            transform: rotate(-360deg);
-            transition: transform 800ms linear;
-          }
-        }
-      }
     }
 
     button {
@@ -712,6 +623,114 @@ h1 {
         @include box-shw(darken($color-fourth, 50));
         transition: all 250ms;
       }
+    }
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  .fa-heart {
+    font-size: $font-secondary;
+    font-weight: 100;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 350px;
+  margin: auto;
+}
+
+.option {
+  animation: menu $anim-dur backwards ease-in-out;
+  @for $i from 1 through 3 {
+    &--#{$i} {
+      animation-delay: $menu-delay * $i;
+    }
+  }
+  cursor: pointer;
+  border-radius: map-get($bd-radius, small);
+  width: 100%;
+  height: 83px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  transform-origin: left;
+  overflow: hidden;
+
+  @include box-shw;
+
+  h5 {
+    padding-bottom: 5px;
+  }
+
+  &__heading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    &__text {
+      padding-left: 10px;
+      width: 80%;
+      h5 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    &__price {
+      width: 80%;
+      font-size: $font-tertiary;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  &:hover > .option__check {
+    width: 20%;
+
+    & > .fa-check-circle {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-primary;
+    background-color: $color-tertiary;
+    border-radius: 0 20px 20px 0;
+    height: 83px;
+    overflow: hidden;
+
+    width: 0;
+    right: 0;
+
+    transform-origin: right center;
+    transition: width 600ms linear;
+    box-shadow: 4px 3px 10px lighten($color-fourth, 50);
+
+    .fa-check-circle {
+      filter: invert(100%);
+
+      transform: rotate(-360deg);
+      transition: transform 800ms linear;
     }
   }
 }

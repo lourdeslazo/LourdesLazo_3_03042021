@@ -461,19 +461,19 @@ footer ul .fa-hands-helping {
   font-size: 0.7em;
 }
 
-/*A la francaise*/
+/*Page A la francaise*/
 h1 {
   font-size: 2.1em;
   font-family: "Shrikhand", sans-serif;
   margin-bottom: 0;
 }
 
-.head__heading {
+header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.head__heading .fa-arrow-left {
+header .fa-arrow-left {
   position: absolute;
   left: 25px;
   top: 30px;
@@ -501,15 +501,6 @@ h1 {
   z-index: 1;
   margin-top: -60px;
 }
-.section-menu article .heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-}
-.section-menu article .heading .fa-heart {
-  font-size: 1.8em;
-  font-weight: 100;
-}
 .section-menu article h3 {
   font-size: 1.2em;
   font-weight: 400;
@@ -517,75 +508,6 @@ h1 {
   border-bottom: 3px solid #99e2d0;
   width: 46px;
   padding-bottom: 7px;
-}
-.section-menu article .menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 350px;
-  margin: auto;
-}
-.section-menu article .menu__text {
-  animation: menu 1000ms backwards ease-in-out;
-  cursor: pointer;
-  border-radius: 20px;
-  width: 100%;
-  height: 83px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  padding: 0 15px 0 15px;
-  box-sizing: border-box;
-  transform-origin: left;
-  overflow: hidden;
-  box-shadow: 0 3px 10px silver;
-}
-.section-menu article .menu__text--1 {
-  animation-delay: 333.3333333333ms;
-}
-.section-menu article .menu__text--2 {
-  animation-delay: 666.6666666667ms;
-}
-.section-menu article .menu__text--3 {
-  animation-delay: 1000ms;
-}
-.section-menu article .menu__text h5 {
-  padding-bottom: 5px;
-}
-.section-menu article .menu__text__price {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.section-menu article .menu__text:hover {
-  padding-right: 0;
-}
-.section-menu article .menu__text:hover > .menu__text__check {
-  width: 20%;
-}
-.section-menu article .menu__text:hover > .menu__text__check > .fa-check-circle {
-  transform: rotate(0deg);
-}
-.section-menu article .menu__text__check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.1em;
-  background-color: #99e2d0;
-  border-radius: 0 20px 20px 0;
-  height: 83px;
-  overflow: hidden;
-  width: 0;
-  right: 0;
-  transform-origin: right center;
-  transition: width 600ms linear;
-  box-shadow: 4px 3px 10px silver;
-}
-.section-menu article .menu__text__check .fa-check-circle {
-  filter: invert(100%);
-  transform: rotate(-360deg);
-  transition: transform 800ms linear;
 }
 .section-menu article button {
   border-radius: 35px;
@@ -606,6 +528,106 @@ h1 {
   opacity: 0.9;
   box-shadow: 0 3px 10px gray;
   transition: all 250ms;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.heading .fa-heart {
+  font-size: 1.8em;
+  font-weight: 100;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 350px;
+  margin: auto;
+}
+
+.option {
+  animation: menu 1000ms backwards ease-in-out;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 100%;
+  height: 83px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  transform-origin: left;
+  overflow: hidden;
+  box-shadow: 0 3px 10px silver;
+}
+.option--1 {
+  animation-delay: 333.3333333333ms;
+}
+.option--2 {
+  animation-delay: 666.6666666667ms;
+}
+.option--3 {
+  animation-delay: 1000ms;
+}
+.option h5 {
+  padding-bottom: 5px;
+}
+.option__heading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.option__heading__text {
+  padding-left: 10px;
+  width: 80%;
+}
+.option__heading__text h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.option__heading__text p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.option__heading__price {
+  width: 80%;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+.option:hover > .option__check {
+  width: 20%;
+}
+.option:hover > .option__check > .fa-check-circle {
+  transform: rotate(0deg);
+}
+.option__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.1em;
+  background-color: #99e2d0;
+  border-radius: 0 20px 20px 0;
+  height: 83px;
+  overflow: hidden;
+  width: 0;
+  right: 0;
+  transform-origin: right center;
+  transition: width 600ms linear;
+  box-shadow: 4px 3px 10px silver;
+}
+.option__check .fa-check-circle {
+  filter: invert(100%);
+  transform: rotate(-360deg);
+  transition: transform 800ms linear;
 }
 
 /*# sourceMappingURL=style.css.map */
