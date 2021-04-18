@@ -443,44 +443,6 @@ main {
     h5 {
       padding-bottom: 5px;
     }
-
-    &__side {
-      position: absolute;
-
-      .fa-heart {
-        position: absolute;
-        left: 250px;
-        top: 5px;
-        font-size: $font-secondary;
-        @include landscape {
-          left: 420px;
-        }
-
-        @include tablets {
-          left: 250px;
-        }
-
-        @include desktop-large {
-          left: 320px;
-        }
-
-        @include desktop-xl {
-          left: 420px;
-        }
-      }
-
-      .fas {
-        opacity: 0;
-
-        &:hover {
-          animation: heart 1000ms forwards ease-in-out;
-          display: block;
-          background: -webkit-linear-gradient($color-primary, $color-secondary);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      }
-    }
   }
 
   span {
@@ -509,6 +471,46 @@ main {
 
     @include desktop-xl {
       left: 390px;
+    }
+  }
+}
+
+.card-restaurant {
+  position: relative;
+
+  > .rest-heart {
+    .fa-heart {
+      position: absolute;
+      left: 270px;
+      top: 225px;
+      font-size: $font-secondary;
+      @include landscape {
+        left: 440px;
+      }
+
+      @include tablets {
+        left: 270px;
+      }
+
+      @include desktop-large {
+        left: 340px;
+      }
+
+      @include desktop-xl {
+        left: 440px;
+      }
+    }
+
+    .fas {
+      opacity: 0;
+
+      &:hover {
+        animation: heart 1000ms forwards ease-in-out;
+        display: block;
+        background: -webkit-linear-gradient($color-primary, $color-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 }
