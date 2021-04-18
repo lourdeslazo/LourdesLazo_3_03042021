@@ -1,6 +1,7 @@
 /*Variables*/
 /*Maps*/
 /*Mixins*/
+/*keyframes*/
 @keyframes bars {
   0% {
     transform: scaleY(0.3);
@@ -36,15 +37,15 @@
     opacity: 1;
   }
 }
-@keyframes t-small {
+@keyframes check-box {
   from {
-    width: 100%;
+    transform: rotate(0);
   }
   to {
-    width: 85%;
-    border-radius: 20px 0 0 20px;
+    transform: rotate(360deg);
   }
 }
+/*Media queries*/
 /*Mobile first*/
 body {
   font-family: "Roboto", sans-serif;
@@ -421,6 +422,18 @@ footer {
   color: white;
   padding: 30px 0 30px 30px;
 }
+@media screen and (min-width: 576px) {
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}
 @media screen and (min-width: 1400px) {
   footer {
     margin: auto;
@@ -440,14 +453,26 @@ footer img {
 @media screen and (min-width: 992px) {
   footer img {
     width: 15%;
+    margin-right: 30px;
   }
 }
 footer ul {
   list-style: none;
   padding: 0;
 }
+@media screen and (min-width: 992px) {
+  footer ul {
+    display: flex;
+  }
+}
 footer ul li {
   line-height: 25px;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  footer ul li {
+    margin-right: 30px;
+  }
 }
 footer ul li a {
   text-decoration: none;
@@ -479,6 +504,29 @@ header .fa-arrow-left {
   top: 30px;
   color: #404040;
 }
+@media screen and (min-width: 768px) {
+  header .fa-arrow-left {
+    top: 35px;
+  }
+}
+@media screen and (min-width: 992px) {
+  header .fa-arrow-left {
+    top: 40px;
+    left: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header .fa-arrow-left {
+    top: 50px;
+    left: 50px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  header .fa-arrow-left {
+    top: 50px;
+    left: 120px;
+  }
+}
 
 /*main*/
 .section-menu {
@@ -489,6 +537,26 @@ header .fa-arrow-left {
   height: 300px;
   width: 100%;
   z-index: -1;
+}
+@media screen and (min-width: 576px) {
+  .section-menu__image {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section-menu__image {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-menu__image {
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-menu__image {
+    height: 700px;
+  }
 }
 .section-menu__image img {
   height: 100%;
@@ -501,33 +569,43 @@ header .fa-arrow-left {
   z-index: 1;
   margin-top: -60px;
 }
+@media screen and (min-width: 576px) {
+  .section-menu article {
+    margin-top: -80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section-menu article {
+    margin-top: -100px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-menu article {
+    margin-top: -120px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-menu article {
+    margin-top: -140px;
+  }
+}
 .section-menu article h3 {
   font-size: 1.2em;
   font-weight: 400;
-  margin: 50px 0 15px 20px;
+  margin: 50px 0 15px 0px;
   border-bottom: 3px solid #99e2d0;
   width: 46px;
   padding-bottom: 7px;
 }
-.section-menu article button {
-  border-radius: 35px;
-  border-style: none;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: white;
-  padding: 20px;
-  margin-top: 30px;
-  background: linear-gradient(175deg, #ff79da, #9356dc);
-  opacity: 1;
-  box-shadow: 0 3px 10px silver;
-  margin-left: 86px;
-  width: 200px;
-  margin-bottom: 60px;
+@media screen and (min-width: 1200px) {
+  .section-menu article h3 {
+    margin-left: 50px;
+  }
 }
-.section-menu article button:hover {
-  opacity: 0.9;
-  box-shadow: 0 3px 10px gray;
-  transition: all 250ms;
+@media screen and (min-width: 1400px) {
+  .section-menu article h3 {
+    margin-left: 60px;
+  }
 }
 
 .heading {
@@ -535,9 +613,36 @@ header .fa-arrow-left {
   justify-content: space-around;
   align-items: baseline;
 }
+@media screen and (min-width: 576px) {
+  .heading {
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .heading {
+    padding: 0 60px;
+  }
+}
 .heading .fa-heart {
   font-size: 1.8em;
   font-weight: 100;
+}
+
+.dish {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .dish {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dish {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 }
 
 .menu {
@@ -546,6 +651,20 @@ header .fa-arrow-left {
   align-items: flex-start;
   width: 350px;
   margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu {
+    flex-direction: column;
+  }
 }
 
 .option {
@@ -560,8 +679,6 @@ header .fa-arrow-left {
   justify-content: space-between;
   position: relative;
   padding: 0;
-  box-sizing: border-box;
-  transform-origin: left;
   overflow: hidden;
   box-shadow: 0 3px 10px silver;
 }
@@ -573,6 +690,11 @@ header .fa-arrow-left {
 }
 .option--3 {
   animation-delay: 1000ms;
+}
+@media screen and (min-width: 1200px) {
+  .option {
+    width: 350px;
+  }
 }
 .option h5 {
   padding-bottom: 5px;
@@ -587,27 +709,26 @@ header .fa-arrow-left {
   padding-left: 10px;
   width: 80%;
 }
-.option__heading__text h5 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+.option__heading__text h5,
 .option__heading__text p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .option__heading__price {
-  width: 80%;
+  width: 20%;
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
+}
+.option__heading__price p {
+  font-weight: bold;
 }
 .option:hover > .option__check {
   width: 20%;
 }
 .option:hover > .option__check > .fa-check-circle {
-  transform: rotate(0deg);
+  animation: check-box 500ms linear;
 }
 .option__check {
   display: flex;
@@ -626,8 +747,31 @@ header .fa-arrow-left {
 }
 .option__check .fa-check-circle {
   filter: invert(100%);
-  transform: rotate(-360deg);
-  transition: transform 800ms linear;
+}
+
+.btn-deliver {
+  display: flex;
+  justify-content: center;
+}
+.btn-deliver button {
+  border-radius: 35px;
+  border-style: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  margin-top: 30px;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  opacity: 1;
+  box-shadow: 0 3px 10px silver;
+  width: 200px;
+  margin-bottom: 60px;
+  transition: all 500ms ease-in-out;
+}
+.btn-deliver button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: 0 3px 10px gray;
 }
 
 /*# sourceMappingURL=style.css.map */
