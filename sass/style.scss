@@ -725,6 +725,14 @@ h1 {
   }
 }
 
+.dish-double {
+  @include desktop-xl {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -748,7 +756,7 @@ h1 {
 
 .option {
   animation: menu $anim-dur backwards ease-in-out;
-  @for $i from 1 through 3 {
+  @for $i from 1 through 4 {
     &--#{$i} {
       animation-delay: $menu-delay * $i;
     }
@@ -831,6 +839,12 @@ h1 {
     .fa-check-circle {
       filter: invert(100%);
     }
+  }
+}
+
+#resize {
+  @include desktop-xl {
+    width: 48%;
   }
 }
 

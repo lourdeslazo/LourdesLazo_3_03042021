@@ -638,6 +638,14 @@ h1 {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .dish-double {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -684,6 +692,9 @@ h1 {
 }
 .option--3 {
   animation-delay: 1000ms;
+}
+.option--4 {
+  animation-delay: 1333.3333333333ms;
 }
 @media screen and (min-width: 1200px) {
   .option {
@@ -742,6 +753,12 @@ h1 {
 }
 .option__check .fa-check-circle {
   filter: invert(100%);
+}
+
+@media screen and (min-width: 1200px) {
+  #resize {
+    width: 48%;
+  }
 }
 
 .btn-deliver {
