@@ -117,7 +117,38 @@ p {
 
 /*Header*/
 header {
-  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .fa-arrow-left {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  color: #404040;
+}
+@media screen and (min-width: 768px) {
+  header .fa-arrow-left {
+    top: 35px;
+  }
+}
+@media screen and (min-width: 992px) {
+  header .fa-arrow-left {
+    top: 40px;
+    left: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header .fa-arrow-left {
+    top: 50px;
+    left: 50px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  header .fa-arrow-left {
+    position: absolute;
+  }
 }
 header img {
   margin: 20px 0;
@@ -136,6 +167,7 @@ header img {
   header {
     max-width: 1400px;
     margin: auto;
+    position: relative;
   }
 }
 
@@ -411,6 +443,7 @@ header img {
   opacity: 0;
 }
 .card-restaurant > .rest-heart .fas:hover {
+  cursor: pointer;
   animation: heart 1000ms forwards ease-in-out;
   display: block;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
@@ -494,41 +527,6 @@ h1 {
   margin-bottom: 0;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .fa-arrow-left {
-  position: absolute;
-  left: 25px;
-  top: 30px;
-  color: #404040;
-}
-@media screen and (min-width: 768px) {
-  header .fa-arrow-left {
-    top: 35px;
-  }
-}
-@media screen and (min-width: 992px) {
-  header .fa-arrow-left {
-    top: 40px;
-    left: 40px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  header .fa-arrow-left {
-    top: 50px;
-    left: 50px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  header .fa-arrow-left {
-    top: 50px;
-    left: 120px;
-  }
-}
-
 /*main*/
 .section-menu {
   display: flex;
@@ -600,7 +598,7 @@ header .fa-arrow-left {
 }
 @media screen and (min-width: 1200px) {
   .section-menu article h3 {
-    margin-left: 50px;
+    margin-left: 30px;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -635,7 +633,7 @@ header .fa-arrow-left {
 }
 @media screen and (min-width: 768px) {
   .dish {
-    width: 350px;
+    width: 60%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -649,22 +647,23 @@ header .fa-arrow-left {
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 350px;
-  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 @media screen and (min-width: 768px) {
   .menu {
     flex-direction: row;
     align-items: baseline;
     justify-content: space-evenly;
-    width: 100%;
+    margin-top: 30px;
     margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
   .menu {
     flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -694,7 +693,7 @@ header .fa-arrow-left {
 }
 @media screen and (min-width: 1200px) {
   .option {
-    width: 350px;
+    width: 30%;
   }
 }
 .option h5 {
