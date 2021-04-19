@@ -598,12 +598,7 @@ h1 {
 }
 @media screen and (min-width: 1200px) {
   .section-menu article h3 {
-    margin-left: 30px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .section-menu article h3 {
-    margin-left: 60px;
+    margin-left: 10px;
   }
 }
 
@@ -639,7 +634,6 @@ h1 {
 @media screen and (min-width: 1200px) {
   .dish {
     display: flex;
-    justify-content: space-evenly;
     width: 100%;
   }
 }
@@ -662,7 +656,7 @@ h1 {
 @media screen and (min-width: 1200px) {
   .menu {
     flex-direction: column;
-    margin-left: 0;
+    margin-left: 10px;
     margin-right: 0;
   }
 }
@@ -693,7 +687,8 @@ h1 {
 }
 @media screen and (min-width: 1200px) {
   .option {
-    width: 30%;
+    width: 35%;
+    margin-right: 10px;
   }
 }
 .option h5 {

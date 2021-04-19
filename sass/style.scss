@@ -685,11 +685,7 @@ h1 {
       padding-bottom: 7px;
 
       @include desktop-xl {
-        margin-left: 30px;
-      }
-
-      @include desktop-xxl {
-        margin-left: 60px;
+        margin-left: 10px;
       }
     }
   }
@@ -724,7 +720,7 @@ h1 {
 
   @include desktop-xl {
     display: flex;
-    justify-content: space-evenly;
+
     width: 100%;
   }
 }
@@ -745,7 +741,7 @@ h1 {
 
   @include desktop-xl {
     flex-direction: column;
-    margin-left: 0;
+    margin-left: 10px;
     margin-right: 0;
   }
 }
@@ -771,7 +767,8 @@ h1 {
   @include box-shw;
 
   @include desktop-xl {
-    width: 30%;
+    width: 35%;
+    margin-right: 10px;
   }
 
   h5 {
