@@ -647,6 +647,30 @@ h1 {
       height: 700px;
     }
 
+    @include desktop-xxl {
+      height: 800px;
+    }
+
+    &--height {
+      height: 400px;
+
+      @include landscape {
+        height: 650px;
+      }
+
+      @include tablets {
+        height: 750px;
+      }
+
+      @include desktop-large {
+        height: 900px;
+      }
+
+      @include desktop-xl {
+        height: 1200px;
+      }
+    }
+
     img {
       height: 100%;
       width: 100%;
