@@ -845,6 +845,11 @@ h1 {
     }
   }
 
+  &:hover > .option__heading {
+    width: 80%;
+    transition: width 600ms linear;
+  }
+
   &__check {
     display: flex;
     justify-content: center;
