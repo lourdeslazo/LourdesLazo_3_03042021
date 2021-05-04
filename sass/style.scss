@@ -871,7 +871,7 @@ h1 {
   }
 }
 
-#resize {
+.resize {
   @include desktop-xl {
     width: 48%;
   }

@@ -788,7 +788,7 @@ h1 {
 }
 
 @media screen and (min-width: 1200px) {
-  #resize {
+  .resize {
     width: 48%;
   }
 }
